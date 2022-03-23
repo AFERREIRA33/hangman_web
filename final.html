@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Hangman Web home</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="/static/final.css">
+
+</head>
+
+
+<body>
+    <h1>
+        You {{ .Won }} , The word to find was "{{ .WordToFind}}" .
+    </h1>
+    <form method="POST" action="/">
+        <h2> To start a new game, push this button </h2>
+        <button class="restart" name="redir" value="accueil">username</button>
+
+    </form>
+
+    <form method="POST" action="/difficulty">
+        <h2>To return to the difficulty menu, push this button</h2>
+        <button class="menu" name="redir" value="home">difficulty</button>
+    </form>
+
+    <form method="POST" action="/scoreboard">
+        <h2>To see the scoreboard, push this button</h2>
+        <button class="menu" name="redir" value="scoreboard">scoreboard </button>
+    </form>
+    <img class="pendu" src="{{ .Image }}">
+
+
+</body>
